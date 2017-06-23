@@ -17,6 +17,12 @@ class PEViewController: UIViewController {
     //MARK: Lifecycle
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        edgesForExtendedLayout = []
+    }
+    
+    
     deinit {
         os_log("%@: DEALLOCED", "\(type(of: self))")
     }

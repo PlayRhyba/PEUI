@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainAreaViewController" customModule="PEUI" customModuleProvider="target">
             <connections>
+                <outlet property="topMenu" destination="faH-sw-EeP" id="ZGg-Po-FAo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,13 +30,58 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faH-sw-EeP" customClass="TopMainAreaMenu" customModule="PEUI" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="g9v-Ym-Dkv">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="947-MM-Dsk">
+                                <size key="itemSize" width="90" height="90"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87t-0G-Cmc">
+                            <rect key="frame" x="0.0" y="100" width="768" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="3xH-uc-eqT"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="collapseExpandButtonClickedWithSender:" destination="faH-sw-EeP" eventType="touchUpInside" id="p6j-l1-fWm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="g9v-Ym-Dkv" firstAttribute="top" secondItem="faH-sw-EeP" secondAttribute="top" id="9ww-tL-FqB"/>
+                        <constraint firstAttribute="trailing" secondItem="87t-0G-Cmc" secondAttribute="trailing" id="Gwk-xK-gtz"/>
+                        <constraint firstAttribute="height" constant="120" id="Khr-GE-hu8"/>
+                        <constraint firstAttribute="bottom" secondItem="87t-0G-Cmc" secondAttribute="bottom" id="LGr-Qs-FFQ"/>
+                        <constraint firstItem="87t-0G-Cmc" firstAttribute="leading" secondItem="faH-sw-EeP" secondAttribute="leading" id="Lpe-6U-hxs"/>
+                        <constraint firstItem="87t-0G-Cmc" firstAttribute="top" secondItem="g9v-Ym-Dkv" secondAttribute="bottom" id="MMk-2a-RSY"/>
+                        <constraint firstAttribute="trailing" secondItem="g9v-Ym-Dkv" secondAttribute="trailing" id="g3X-pD-qcx"/>
+                        <constraint firstItem="g9v-Ym-Dkv" firstAttribute="leading" secondItem="faH-sw-EeP" secondAttribute="leading" id="vOn-xw-P86"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="collapseExpandButton" destination="87t-0G-Cmc" id="JaZ-vD-e7Z"/>
+                        <outlet property="collectionView" destination="g9v-Ym-Dkv" id="EWV-64-lPE"/>
+                        <outlet property="heightLayoutConstraint" destination="Khr-GE-hu8" id="a3f-Zl-gGO"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6wl-U7-xnL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AzQ-m6-pqb"/>
+                <constraint firstAttribute="trailing" secondItem="faH-sw-EeP" secondAttribute="trailing" id="C4x-nv-5Et"/>
+                <constraint firstItem="faH-sw-EeP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JzN-Af-fZ9"/>
+                <constraint firstItem="faH-sw-EeP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ee6-cI-pm4"/>
                 <constraint firstItem="6wl-U7-xnL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hFI-ER-J3E"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="-276" y="-16"/>
         </view>
     </objects>
 </document>

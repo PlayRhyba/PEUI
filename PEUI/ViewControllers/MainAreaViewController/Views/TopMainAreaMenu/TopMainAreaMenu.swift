@@ -17,20 +17,79 @@ protocol TopMainAreaMenuDelegate: NSObjectProtocol {
 
 class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    private struct Constants {
+        static let expandedHeight: CGFloat = 120.0
+        static let collapsedHeight: CGFloat = 20.0
+    }
+    
+    
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var collectionViewHeightHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet var heightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet var collapseExpandButton: UIButton!
     
-    let structure = TopMainAreaMenuItem.mainAreaTopMenuItems()
+    lazy var structure: [TopMainAreaMenuItem] = {
+        var items = TopMainAreaMenuItem.mainAreaTopMenuItems()
+        items.first?.selected = true
+        return items
+    }()
     
-    private(set) var selectedItem: TopMainAreaMenuItem?
     weak var delegate: TopMainAreaMenuDelegate?
+    
+    
+    //MARK: Public Methods
+    
+    
+    func expand() {
+        if !expanded {
+            heightLayoutConstraint.constant = Constants.expandedHeight
+            collectionView.isHidden = false
+            expanded = true
+        }
+    }
+    
+    
+    func collapse() {
+        if expanded {
+            heightLayoutConstraint.constant = Constants.collapsedHeight
+            collectionView.isHidden = true
+            expanded = false
+        }
+    }
+    
+    
+    var expanded: Bool = false {
+        didSet {
+            collapseExpandButton.setTitle(expanded ? "Collapse" : "Expand", for: .normal)
+        }
+    }
+    
+    
+    //MARK: Lifecycle
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         TopMainAreaMenuCell.register(for: collectionView)
+        
+        expand()
         collectionView.reloadData()
+    }
+    
+    
+    //MARK: IBAction
+    
+    
+    @IBAction func collapseExpandButtonClicked(sender: UIButton) {
+        if expanded {
+            collapse()
+        }
+        else {
+            expand()
+        }
     }
     
     
@@ -53,7 +112,13 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedItem = structure[indexPath.row]
-        delegate?.topMainAreaMenu(self, didSelectItem: selectedItem!)
+        structure.forEach { $0.selected = false }
+        
+        let item = structure[indexPath.row]
+        item.selected = true
+        
+        collectionView.reloadData()
+        
+        delegate?.topMainAreaMenu(self, didSelectItem: item)
     }
 }

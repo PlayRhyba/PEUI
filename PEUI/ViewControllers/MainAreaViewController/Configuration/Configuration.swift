@@ -11,9 +11,16 @@ import UIKit
 
 
 enum LeftMainAreaMenuItem: String {
+    case current = "Current"
+    case recent = "Recent"
+    case synchronization = "Synchronization"
+    case debug = "Debug"
+    case options = "Options"
+    
     case projectList = "Project List"
     case globalWelderList = "Global Welder List"
     case globalWPSList = "Global WPS List"
+    
     case spreadList = "Spread List"
     
     var title: String {
@@ -26,6 +33,15 @@ enum LeftMainAreaMenuItem: String {
     
     static func mainAreaLeftMenuItems(kind: TopMainAreaMenuItem.Kind) -> [LeftMainAreaMenuItem] {
         switch (kind) {
+        case .main:
+            return [
+                current,
+                recent,
+                synchronization,
+                debug,
+                options
+            ]
+            
         case .projects:
             return [
                 projectList,
@@ -43,9 +59,10 @@ enum LeftMainAreaMenuItem: String {
 }
 
 
-struct TopMainAreaMenuItem {
+class TopMainAreaMenuItem {
     
     enum Kind: String {
+        case main = "Main"
         case projects = "Projects"
         case spreads = "Spreads"
         case assets = "Assets"
@@ -58,6 +75,7 @@ struct TopMainAreaMenuItem {
     
     let kind: Kind
     let image: UIImage?
+    var selected: Bool
     
     var title: String {
         return kind.rawValue
@@ -66,9 +84,10 @@ struct TopMainAreaMenuItem {
     let leftMenuItems: [LeftMainAreaMenuItem]
     
     
-    init(kind: Kind, image: UIImage? = nil) {
+    init(kind: Kind, image: UIImage? = nil, selected: Bool = false) {
         self.kind = kind
         self.image = image
+        self.selected = selected
         leftMenuItems = LeftMainAreaMenuItem.mainAreaLeftMenuItems(kind: self.kind)
     }
     
@@ -78,6 +97,7 @@ struct TopMainAreaMenuItem {
     
     static func mainAreaTopMenuItems() -> [TopMainAreaMenuItem] {
         return [
+            TopMainAreaMenuItem(kind: .main),
             TopMainAreaMenuItem(kind: .projects),
             TopMainAreaMenuItem(kind: .spreads),
             TopMainAreaMenuItem(kind: .assets),

@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ls5-Rg-bQf" customClass="TopMainAreaMenuCell" customModule="PEUI" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="117" height="87"/>
+            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="117" height="87"/>
+                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xB-zh-QoB">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49Z-IO-Rll">
+                        <rect key="frame" x="0.0" y="35" width="90" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="3Tc-qx-M84"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="9xB-zh-QoB" firstAttribute="top" secondItem="Ls5-Rg-bQf" secondAttribute="top" id="2Id-Km-bJp"/>
+                <constraint firstAttribute="trailing" secondItem="9xB-zh-QoB" secondAttribute="trailing" id="Dqy-ab-gOu"/>
+                <constraint firstAttribute="bottom" secondItem="9xB-zh-QoB" secondAttribute="bottom" id="alG-Tw-TMg"/>
+                <constraint firstItem="9xB-zh-QoB" firstAttribute="leading" secondItem="Ls5-Rg-bQf" secondAttribute="leading" id="gpz-wN-cQK"/>
+                <constraint firstItem="49Z-IO-Rll" firstAttribute="leading" secondItem="Ls5-Rg-bQf" secondAttribute="leading" id="m3T-QS-jpZ"/>
+                <constraint firstAttribute="trailing" secondItem="49Z-IO-Rll" secondAttribute="trailing" id="na3-uY-x2v"/>
+                <constraint firstItem="49Z-IO-Rll" firstAttribute="centerY" secondItem="Ls5-Rg-bQf" secondAttribute="centerY" id="tBl-6e-baA"/>
+            </constraints>
             <size key="customSize" width="117" height="87"/>
-            <point key="canvasLocation" x="-80.5" y="-132.5"/>
+            <connections>
+                <outlet property="imageView" destination="9xB-zh-QoB" id="Nvp-1b-oUA"/>
+                <outlet property="label" destination="49Z-IO-Rll" id="u8q-eR-chX"/>
+            </connections>
+            <point key="canvasLocation" x="-81" y="-133"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -12,13 +12,16 @@ import UIKit
 
 class TopMainAreaMenuCell: PECollectionViewCell {
     
+    @IBOutlet var label: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    
     var item: TopMainAreaMenuItem? {
         didSet {
-            
-            
-            //TODO: Adjust UI
-            
-            
+            if let item = item {
+                imageView.image = item.image
+                label.text = item.title
+                layer.borderWidth = item.selected ? 2.0 : 0.0
+            }
         }
     }
 }

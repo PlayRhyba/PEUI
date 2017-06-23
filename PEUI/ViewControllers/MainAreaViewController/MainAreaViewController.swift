@@ -10,8 +10,14 @@
 import UIKit
 
 
-class MainAreaViewController: PEViewController {
-
+class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate {
+    
+    @IBOutlet var topMenu: TopMainAreaMenu!
+    
+    
+    //MARK: Lifecycle
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +25,19 @@ class MainAreaViewController: PEViewController {
                                                            style: UIBarButtonItemStyle.plain,
                                                            target: self,
                                                            action: #selector(backToLogin))
+        topMenu.delegate = self
+    }
+    
+    
+    //MARK: TopMainAreaMenuDelegate
+    
+    
+    func topMainAreaMenu(_ topMainAreaMenu: TopMainAreaMenu, didSelectItem item: TopMainAreaMenuItem) {
+        
+        
+        //TODO: top menu selection
+        
+        
     }
     
     
