@@ -16,9 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
+    //MARK: Lifecycle
+    
+    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        configureWindow()
+        Router.shared.transitToLogin()
+        
         return true
+    }
+    
+    
+    //MARK: Internal Logic
+    
+    
+    func configureWindow() {
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        window?.makeKeyAndVisible()
     }
 }
 

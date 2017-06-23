@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="PEUI" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aE-cV-n14">
+                    <rect key="frame" x="334" y="502" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="EWV-7s-LZw"/>
+                        <constraint firstAttribute="width" constant="100" id="Qep-nO-g9j"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-Uj-oak">
+                    <rect key="frame" x="293" y="531" width="183" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="183" id="Fb7-vT-IOC"/>
+                        <constraint firstAttribute="height" constant="50" id="xG3-Wo-qVW"/>
+                    </constraints>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="loginButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="KWb-L3-Y1a"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KD3-Uj-oak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6iU-Lj-1lh"/>
+                <constraint firstItem="KD3-Uj-oak" firstAttribute="top" secondItem="8aE-cV-n14" secondAttribute="bottom" constant="8" id="7Wh-gB-nq3"/>
+                <constraint firstItem="8aE-cV-n14" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Tvl-XF-nnf"/>
+                <constraint firstItem="8aE-cV-n14" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jhk-yx-vkm"/>
+            </constraints>
+            <point key="canvasLocation" x="13" y="-25"/>
+        </view>
+    </objects>
+</document>
