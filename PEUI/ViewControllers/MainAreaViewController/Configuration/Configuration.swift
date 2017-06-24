@@ -59,7 +59,7 @@ enum LeftMainAreaMenuItem: String {
 }
 
 
-class TopMainAreaMenuItem {
+struct TopMainAreaMenuItem {
     
     enum Kind: String {
         case main = "Main"
@@ -75,7 +75,6 @@ class TopMainAreaMenuItem {
     
     let kind: Kind
     let image: UIImage?
-    var selected: Bool
     
     var title: String {
         return kind.rawValue
@@ -84,10 +83,9 @@ class TopMainAreaMenuItem {
     let leftMenuItems: [LeftMainAreaMenuItem]
     
     
-    init(kind: Kind, image: UIImage? = nil, selected: Bool = false) {
+    init(kind: Kind, image: UIImage? = nil) {
         self.kind = kind
         self.image = image
-        self.selected = selected
         leftMenuItems = LeftMainAreaMenuItem.mainAreaLeftMenuItems(kind: self.kind)
     }
     

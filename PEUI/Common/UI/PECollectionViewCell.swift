@@ -12,6 +12,10 @@ import UIKit
 
 class PECollectionViewCell: UICollectionViewCell {
     
+    
+    //MARK: Public Methods
+    
+    
     static var reuseIdentifier: String {
         return self.className
     }

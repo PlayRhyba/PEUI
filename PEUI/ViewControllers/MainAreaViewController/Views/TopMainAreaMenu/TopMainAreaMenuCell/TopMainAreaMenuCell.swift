@@ -20,8 +20,17 @@ class TopMainAreaMenuCell: PECollectionViewCell {
             if let item = item {
                 imageView.image = item.image
                 label.text = item.title
-                layer.borderWidth = item.selected ? 2.0 : 0.0
             }
+        }
+    }
+    
+    
+    //MARK: UICollectionViewCell
+    
+    
+    override var isSelected: Bool {
+        didSet {
+            layer.borderWidth = isSelected ? 2.0 : 0.0
         }
     }
 }

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainAreaViewController" customModule="PEUI" customModuleProvider="target">
             <connections>
+                <outlet property="leftMenu" destination="zWK-If-Pfg" id="SV4-ss-PdI"/>
                 <outlet property="topMenu" destination="faH-sw-EeP" id="ZGg-Po-FAo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,7 +55,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="g9v-Ym-Dkv" firstAttribute="top" secondItem="faH-sw-EeP" secondAttribute="top" id="9ww-tL-FqB"/>
                         <constraint firstAttribute="trailing" secondItem="87t-0G-Cmc" secondAttribute="trailing" id="Gwk-xK-gtz"/>
@@ -71,12 +72,35 @@
                         <outlet property="heightLayoutConstraint" destination="Khr-GE-hu8" id="a3f-Zl-gGO"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-If-Pfg" customClass="LeftMainAreaMenu" customModule="PEUI" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="120" width="200" height="840"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ta6-Oi-FT7">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="840"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="GpW-ln-yTc"/>
+                        <constraint firstAttribute="trailing" secondItem="Ta6-Oi-FT7" secondAttribute="trailing" id="IOs-87-tcX"/>
+                        <constraint firstItem="Ta6-Oi-FT7" firstAttribute="top" secondItem="zWK-If-Pfg" secondAttribute="top" id="PhG-sz-0cy"/>
+                        <constraint firstItem="Ta6-Oi-FT7" firstAttribute="leading" secondItem="zWK-If-Pfg" secondAttribute="leading" id="ZLd-YA-Ahf"/>
+                        <constraint firstAttribute="bottom" secondItem="Ta6-Oi-FT7" secondAttribute="bottom" id="t46-tr-dFU"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="tableView" destination="Ta6-Oi-FT7" id="94D-5D-DyB"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="zWK-If-Pfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="36v-DN-0xh"/>
                 <constraint firstItem="6wl-U7-xnL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AzQ-m6-pqb"/>
                 <constraint firstAttribute="trailing" secondItem="faH-sw-EeP" secondAttribute="trailing" id="C4x-nv-5Et"/>
+                <constraint firstItem="zWK-If-Pfg" firstAttribute="top" secondItem="faH-sw-EeP" secondAttribute="bottom" id="DAX-dx-3eH"/>
                 <constraint firstItem="faH-sw-EeP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JzN-Af-fZ9"/>
+                <constraint firstAttribute="bottom" secondItem="zWK-If-Pfg" secondAttribute="bottom" id="diI-hw-h8x"/>
                 <constraint firstItem="faH-sw-EeP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ee6-cI-pm4"/>
                 <constraint firstItem="6wl-U7-xnL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hFI-ER-J3E"/>
             </constraints>

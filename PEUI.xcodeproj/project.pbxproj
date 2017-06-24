@@ -10,6 +10,12 @@
 		11524D261EFAF25C00EAE775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11524D251EFAF25C00EAE775 /* AppDelegate.swift */; };
 		11524D2D1EFAF25C00EAE775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11524D2C1EFAF25C00EAE775 /* Assets.xcassets */; };
 		11524D301EFAF25C00EAE775 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11524D2E1EFAF25C00EAE775 /* LaunchScreen.storyboard */; };
+		11C6F01A1EFEFA160041A0DC /* NetworkOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F0181EFEFA160041A0DC /* NetworkOptionsViewController.swift */; };
+		11C6F01B1EFEFA160041A0DC /* NetworkOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C6F0191EFEFA160041A0DC /* NetworkOptionsViewController.xib */; };
+		11C6F01E1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F01D1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift */; };
+		11C6F0211EFF03C20041A0DC /* PETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F0201EFF03C20041A0DC /* PETableViewCell.swift */; };
+		11C6F0231EFF04860041A0DC /* LeftMainAreaMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6F0221EFF04860041A0DC /* LeftMainAreaMenuCell.swift */; };
+		11C6F0251EFF0F110041A0DC /* LeftMainAreaMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C6F0241EFF0F110041A0DC /* LeftMainAreaMenuCell.xib */; };
 		C7D2A37D1EFD31F900414232 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A37B1EFD31F900414232 /* LoginViewController.swift */; };
 		C7D2A37E1EFD31F900414232 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2A37C1EFD31F900414232 /* LoginViewController.xib */; };
 		C7D2A3811EFD345500414232 /* MainAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A37F1EFD345500414232 /* MainAreaViewController.swift */; };
@@ -32,6 +38,12 @@
 		11524D2C1EFAF25C00EAE775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11524D2F1EFAF25C00EAE775 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11524D311EFAF25C00EAE775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C6F0181EFEFA160041A0DC /* NetworkOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOptionsViewController.swift; sourceTree = "<group>"; };
+		11C6F0191EFEFA160041A0DC /* NetworkOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkOptionsViewController.xib; sourceTree = "<group>"; };
+		11C6F01D1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMainAreaMenu.swift; sourceTree = "<group>"; };
+		11C6F0201EFF03C20041A0DC /* PETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PETableViewCell.swift; sourceTree = "<group>"; };
+		11C6F0221EFF04860041A0DC /* LeftMainAreaMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMainAreaMenuCell.swift; sourceTree = "<group>"; };
+		11C6F0241EFF0F110041A0DC /* LeftMainAreaMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMainAreaMenuCell.xib; sourceTree = "<group>"; };
 		C7D2A37B1EFD31F900414232 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C7D2A37C1EFD31F900414232 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C7D2A37F1EFD345500414232 /* MainAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAreaViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +101,33 @@
 			path = PEUI;
 			sourceTree = "<group>";
 		};
+		11C6F0171EFEF9F50041A0DC /* NetworkOptionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11C6F0181EFEFA160041A0DC /* NetworkOptionsViewController.swift */,
+				11C6F0191EFEFA160041A0DC /* NetworkOptionsViewController.xib */,
+			);
+			path = NetworkOptionsViewController;
+			sourceTree = "<group>";
+		};
+		11C6F01C1EFEFDE50041A0DC /* LeftMainAreaMenu */ = {
+			isa = PBXGroup;
+			children = (
+				11C6F01F1EFEFF800041A0DC /* LeftMainAreaMenuCell */,
+				11C6F01D1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift */,
+			);
+			path = LeftMainAreaMenu;
+			sourceTree = "<group>";
+		};
+		11C6F01F1EFEFF800041A0DC /* LeftMainAreaMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				11C6F0221EFF04860041A0DC /* LeftMainAreaMenuCell.swift */,
+				11C6F0241EFF0F110041A0DC /* LeftMainAreaMenuCell.xib */,
+			);
+			path = LeftMainAreaMenuCell;
+			sourceTree = "<group>";
+		};
 		C7D2A3701EFD306400414232 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +148,7 @@
 		C7D2A3781EFD318700414232 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				11C6F0171EFEF9F50041A0DC /* NetworkOptionsViewController */,
 				C7D2A3791EFD31E100414232 /* LoginViewController */,
 				C7D2A37A1EFD31E100414232 /* MainAreaViewController */,
 			);
@@ -139,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D2A3991EFD765000414232 /* TopMainAreaMenu */,
+				11C6F01C1EFEFDE50041A0DC /* LeftMainAreaMenu */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D2A38F1EFD74C100414232 /* PECollectionViewCell.swift */,
+				11C6F0201EFF03C20041A0DC /* PETableViewCell.swift */,
 				C7D2A3901EFD74C100414232 /* PENavigationController.swift */,
 				C7D2A3911EFD74C100414232 /* PESplitViewController.swift */,
 				C7D2A3921EFD74C100414232 /* PEViewController.swift */,
@@ -249,8 +291,10 @@
 			files = (
 				C7D2A3821EFD345500414232 /* MainAreaViewController.xib in Resources */,
 				C7D2A37E1EFD31F900414232 /* LoginViewController.xib in Resources */,
+				11C6F0251EFF0F110041A0DC /* LeftMainAreaMenuCell.xib in Resources */,
 				11524D301EFAF25C00EAE775 /* LaunchScreen.storyboard in Resources */,
 				11524D2D1EFAF25C00EAE775 /* Assets.xcassets in Resources */,
+				11C6F01B1EFEFA160041A0DC /* NetworkOptionsViewController.xib in Resources */,
 				C7D2A3A21EFD76C800414232 /* TopMainAreaMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +308,8 @@
 			files = (
 				C7D2A3A01EFD76B100414232 /* TopMainAreaMenuCell.swift in Sources */,
 				C7D2A3841EFD37F600414232 /* Router.swift in Sources */,
+				11C6F0211EFF03C20041A0DC /* PETableViewCell.swift in Sources */,
+				11C6F0231EFF04860041A0DC /* LeftMainAreaMenuCell.swift in Sources */,
 				C7D2A3811EFD345500414232 /* MainAreaViewController.swift in Sources */,
 				C7D2A39B1EFD765000414232 /* TopMainAreaMenu.swift in Sources */,
 				C7D2A37D1EFD31F900414232 /* LoginViewController.swift in Sources */,
@@ -271,9 +317,11 @@
 				C7D2A38A1EFD6EC900414232 /* Configuration.swift in Sources */,
 				C7D2A3961EFD74C100414232 /* PEViewController.swift in Sources */,
 				C7D2A3981EFD74FF00414232 /* NSObject+Utilities.swift in Sources */,
+				11C6F01E1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift in Sources */,
 				C7D2A3951EFD74C100414232 /* PESplitViewController.swift in Sources */,
 				C7D2A3931EFD74C100414232 /* PECollectionViewCell.swift in Sources */,
 				11524D261EFAF25C00EAE775 /* AppDelegate.swift in Sources */,
+				11C6F01A1EFEFA160041A0DC /* NetworkOptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

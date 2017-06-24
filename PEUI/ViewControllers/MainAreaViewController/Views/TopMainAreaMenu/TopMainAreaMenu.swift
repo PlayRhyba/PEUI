@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol TopMainAreaMenuDelegate: NSObjectProtocol {
-    func topMainAreaMenu(_ topMainAreaMenu: TopMainAreaMenu, didSelectItem item: TopMainAreaMenuItem);
+    func topMainAreaMenu(_ topMainAreaMenu: TopMainAreaMenu, didSelectItem item: TopMainAreaMenuItem)
 }
 
 
@@ -27,13 +27,15 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     @IBOutlet var heightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var collapseExpandButton: UIButton!
     
-    lazy var structure: [TopMainAreaMenuItem] = {
-        var items = TopMainAreaMenuItem.mainAreaTopMenuItems()
-        items.first?.selected = true
-        return items
-    }()
+    var structure = TopMainAreaMenuItem.mainAreaTopMenuItems()
     
     weak var delegate: TopMainAreaMenuDelegate?
+    
+    var expanded: Bool = false {
+        didSet {
+            collapseExpandButton.setTitle(expanded ? "Collapse" : "Expand", for: .normal)
+        }
+    }
     
     
     //MARK: Public Methods
@@ -53,13 +55,6 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
             heightLayoutConstraint.constant = Constants.collapsedHeight
             collectionView.isHidden = true
             expanded = false
-        }
-    }
-    
-    
-    var expanded: Bool = false {
-        didSet {
-            collapseExpandButton.setTitle(expanded ? "Collapse" : "Expand", for: .normal)
         }
     }
     
@@ -112,13 +107,7 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        structure.forEach { $0.selected = false }
-        
         let item = structure[indexPath.row]
-        item.selected = true
-        
-        collectionView.reloadData()
-        
         delegate?.topMainAreaMenu(self, didSelectItem: item)
     }
 }

@@ -10,9 +10,10 @@
 import UIKit
 
 
-class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate {
+class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMainAreaMenuDelegate {
     
     @IBOutlet var topMenu: TopMainAreaMenu!
+    @IBOutlet var leftMenu: LeftMainAreaMenu!
     
     
     //MARK: Lifecycle
@@ -21,11 +22,14 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Main"
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login",
                                                            style: UIBarButtonItemStyle.plain,
                                                            target: self,
                                                            action: #selector(backToLogin))
         topMenu.delegate = self
+        leftMenu.delegate = self
     }
     
     
@@ -33,9 +37,17 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate {
     
     
     func topMainAreaMenu(_ topMainAreaMenu: TopMainAreaMenu, didSelectItem item: TopMainAreaMenuItem) {
+        leftMenu.topMenuItem = item
+    }
+    
+    
+    //MARK: LeftMainAreaMenuDelegate
+    
+    
+    func leftMainAreaMenu(_ leftMainAreaMenu: LeftMainAreaMenu, didSelectItem item: LeftMainAreaMenuItem) {
         
         
-        //TODO: top menu selection
+        //TODO: left menu selection
         
         
     }

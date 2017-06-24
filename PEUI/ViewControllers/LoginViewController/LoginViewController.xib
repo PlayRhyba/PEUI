@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,11 +29,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piA-mJ-Ca5">
+                    <rect key="frame" x="293" y="531" width="183" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="183" id="MX4-Mo-Cb1"/>
+                        <constraint firstAttribute="height" constant="44" id="Vxc-Jh-T9V"/>
+                    </constraints>
+                    <state key="normal" title="Network Options"/>
+                    <connections>
+                        <action selector="networkOptionsButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="6Ax-PM-HPB"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-Uj-oak">
-                    <rect key="frame" x="293" y="531" width="183" height="50"/>
+                    <rect key="frame" x="293" y="583" width="183" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="183" id="Fb7-vT-IOC"/>
-                        <constraint firstAttribute="height" constant="50" id="xG3-Wo-qVW"/>
+                        <constraint firstAttribute="height" constant="44" id="xG3-Wo-qVW"/>
                     </constraints>
                     <state key="normal" title="Login"/>
                     <connections>
@@ -44,9 +55,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KD3-Uj-oak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6iU-Lj-1lh"/>
-                <constraint firstItem="KD3-Uj-oak" firstAttribute="top" secondItem="8aE-cV-n14" secondAttribute="bottom" constant="8" id="7Wh-gB-nq3"/>
+                <constraint firstItem="piA-mJ-Ca5" firstAttribute="top" secondItem="8aE-cV-n14" secondAttribute="bottom" constant="8" id="CiQ-qf-f6u"/>
                 <constraint firstItem="8aE-cV-n14" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Tvl-XF-nnf"/>
                 <constraint firstItem="8aE-cV-n14" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jhk-yx-vkm"/>
+                <constraint firstItem="piA-mJ-Ca5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rjg-Zy-GDh"/>
+                <constraint firstItem="KD3-Uj-oak" firstAttribute="top" secondItem="piA-mJ-Ca5" secondAttribute="bottom" constant="8" id="yD2-Pq-ZQq"/>
             </constraints>
             <point key="canvasLocation" x="13" y="-25"/>
         </view>

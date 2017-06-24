@@ -17,6 +17,7 @@ class LoginViewController: PEViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Login"
     }
     
     
@@ -25,5 +26,10 @@ class LoginViewController: PEViewController {
     
     @IBAction func loginButtonClicked(sender: UIButton) {
         Router.shared.transitToMainArea()
+    }
+    
+    
+    @IBAction func networkOptionsButtonClicked(sender: UIButton) {
+        Router.shared.transitToNetworkOptions()
     }
 }

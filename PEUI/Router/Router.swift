@@ -49,4 +49,9 @@ class Router: NSObject {
         
         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = mainAreaNavigationController
     }
+    
+    
+    func transitToNetworkOptions() {
+        loginNavigationController?.pushViewController(NetworkOptionsViewController(), animated: true)
+    }
 }
