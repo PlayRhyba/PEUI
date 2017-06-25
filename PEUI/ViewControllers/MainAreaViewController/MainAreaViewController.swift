@@ -29,6 +29,8 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
                                                            target: self,
                                                            action: #selector(backToLogin))
         topMenu.delegate = self
+        topMenu.selectItem(atIndex: 0)
+        
         leftMenu.delegate = self
     }
     
@@ -38,6 +40,7 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
     
     func topMainAreaMenu(_ topMainAreaMenu: TopMainAreaMenu, didSelectItem item: TopMainAreaMenuItem) {
         leftMenu.topMenuItem = item
+        leftMenu.selectItem(atIndex: 0)
     }
     
     

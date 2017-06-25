@@ -27,6 +27,31 @@ class LeftMainAreaMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     
     weak var delegate: LeftMainAreaMenuDelegate?
     
+    var selectedItem: LeftMainAreaMenuItem? {
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        if let indexPath = indexPath,
+            let topMenuItem = topMenuItem {
+            return topMenuItem.leftMenuItems[indexPath.row]
+        }
+        
+        return nil
+    }
+    
+    
+    //MARK: Public Methods
+    
+    
+    func selectItem(atIndex index: Int) {
+        if let topMenuItem = topMenuItem {
+            if index >= 0 && index < topMenuItem.leftMenuItems.count {
+                let indexPath = IndexPath(row: index, section: 0)
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.top)
+                tableView(tableView, didSelectRowAt: indexPath)
+            }
+        }
+    }
+    
     
     //MARK: Lifecycle
     
@@ -36,6 +61,7 @@ class LeftMainAreaMenu: UIView, UITableViewDataSource, UITableViewDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsMultipleSelection = false
         
         LeftMainAreaMenuCell.register(for: tableView)
     }
@@ -57,6 +83,15 @@ class LeftMainAreaMenu: UIView, UITableViewDataSource, UITableViewDelegate {
     
     
     //MARK: UITableViewDelegate
+    
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath != tableView.indexPathForSelectedRow {
+            return indexPath
+        }
+        
+        return nil
+    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

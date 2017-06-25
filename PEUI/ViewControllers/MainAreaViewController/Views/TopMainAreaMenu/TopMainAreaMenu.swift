@@ -31,30 +31,49 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     weak var delegate: TopMainAreaMenuDelegate?
     
-    var expanded: Bool = false {
+    var isExpanded: Bool = false {
         didSet {
-            collapseExpandButton.setTitle(expanded ? "Collapse" : "Expand", for: .normal)
+            collapseExpandButton.setTitle(isExpanded ? "Collapse" : "Expand", for: .normal)
         }
+    }
+    
+    var selectedItem: TopMainAreaMenuItem? {
+        let indexPath = collectionView.indexPathsForSelectedItems?.first
+        
+        if let indexPath = indexPath {
+            return structure[indexPath.row]
+        }
+        
+        return nil
     }
     
     
     //MARK: Public Methods
     
     
+    func selectItem(atIndex index: Int) {
+        if index >= 0 && index < structure.count {
+            let indexPath = IndexPath(row: index, section: 0)
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
+            collectionView(collectionView, didSelectItemAt: indexPath)
+        }
+    }
+    
+    
     func expand() {
-        if !expanded {
+        if !isExpanded {
             heightLayoutConstraint.constant = Constants.expandedHeight
             collectionView.isHidden = false
-            expanded = true
+            isExpanded = true
         }
     }
     
     
     func collapse() {
-        if expanded {
+        if isExpanded {
             heightLayoutConstraint.constant = Constants.collapsedHeight
             collectionView.isHidden = true
-            expanded = false
+            isExpanded = false
         }
     }
     
@@ -67,6 +86,7 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.allowsMultipleSelection = false
         
         TopMainAreaMenuCell.register(for: collectionView)
         
@@ -79,7 +99,7 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     
     @IBAction func collapseExpandButtonClicked(sender: UIButton) {
-        if expanded {
+        if isExpanded {
             collapse()
         }
         else {
@@ -104,6 +124,11 @@ class TopMainAreaMenu: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     
     //MARK: UICollectionViewDelegate
+    
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return collectionView.indexPathsForSelectedItems?.first != indexPath
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
