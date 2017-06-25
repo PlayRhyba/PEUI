@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110B6CBE1F0057DA005B0911 /* MainAreaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110B6CBD1F0057DA005B0911 /* MainAreaContentView.swift */; };
+		110B6CC41F0068BA005B0911 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110B6CC31F0068BA005B0911 /* UIView+Nib.swift */; };
 		11524D261EFAF25C00EAE775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11524D251EFAF25C00EAE775 /* AppDelegate.swift */; };
 		11524D2D1EFAF25C00EAE775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11524D2C1EFAF25C00EAE775 /* Assets.xcassets */; };
 		11524D301EFAF25C00EAE775 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11524D2E1EFAF25C00EAE775 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110B6CBD1F0057DA005B0911 /* MainAreaContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAreaContentView.swift; sourceTree = "<group>"; };
+		110B6CC31F0068BA005B0911 /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		11524D221EFAF25C00EAE775 /* PEUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PEUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11524D251EFAF25C00EAE775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11524D2C1EFAF25C00EAE775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110B6CBC1F0057BD005B0911 /* MainAreaContentView */ = {
+			isa = PBXGroup;
+			children = (
+				110B6CBD1F0057DA005B0911 /* MainAreaContentView.swift */,
+			);
+			path = MainAreaContentView;
+			sourceTree = "<group>";
+		};
 		11524D191EFAF25C00EAE775 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +190,7 @@
 		C7D2A3851EFD601D00414232 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				110B6CBC1F0057BD005B0911 /* MainAreaContentView */,
 				C7D2A3991EFD765000414232 /* TopMainAreaMenu */,
 				11C6F01C1EFEFDE50041A0DC /* LeftMainAreaMenu */,
 			);
@@ -196,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D2A3971EFD74FF00414232 /* NSObject+Utilities.swift */,
+				110B6CC31F0068BA005B0911 /* UIView+Nib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,11 +322,13 @@
 			files = (
 				C7D2A3A01EFD76B100414232 /* TopMainAreaMenuCell.swift in Sources */,
 				C7D2A3841EFD37F600414232 /* Router.swift in Sources */,
+				110B6CC41F0068BA005B0911 /* UIView+Nib.swift in Sources */,
 				11C6F0211EFF03C20041A0DC /* PETableViewCell.swift in Sources */,
 				11C6F0231EFF04860041A0DC /* LeftMainAreaMenuCell.swift in Sources */,
 				C7D2A3811EFD345500414232 /* MainAreaViewController.swift in Sources */,
 				C7D2A39B1EFD765000414232 /* TopMainAreaMenu.swift in Sources */,
 				C7D2A37D1EFD31F900414232 /* LoginViewController.swift in Sources */,
+				110B6CBE1F0057DA005B0911 /* MainAreaContentView.swift in Sources */,
 				C7D2A3941EFD74C100414232 /* PENavigationController.swift in Sources */,
 				C7D2A38A1EFD6EC900414232 /* Configuration.swift in Sources */,
 				C7D2A3961EFD74C100414232 /* PEViewController.swift in Sources */,

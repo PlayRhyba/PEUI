@@ -14,6 +14,7 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
     
     @IBOutlet var topMenu: TopMainAreaMenu!
     @IBOutlet var leftMenu: LeftMainAreaMenu!
+    @IBOutlet var contentContainer: UIView!
     
     
     //MARK: Lifecycle
@@ -29,9 +30,9 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
                                                            target: self,
                                                            action: #selector(backToLogin))
         topMenu.delegate = self
-        topMenu.selectItem(atIndex: 0)
-        
         leftMenu.delegate = self
+
+        topMenu.selectItem(atIndex: 0)
     }
     
     
@@ -48,9 +49,21 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
     
     
     func leftMainAreaMenu(_ leftMainAreaMenu: LeftMainAreaMenu, didSelectItem item: LeftMainAreaMenuItem) {
+        let view = MainAreaContentView()
+        
+        switch item {
+        case .current:
+            view.backgroundColor = UIColor.red
+            view.fill(superview: contentContainer)
+        case .recent:
+            view.backgroundColor = UIColor.green
+            view.fill(superview: contentContainer)
+        default:
+            contentContainer.subviews.forEach { $0.removeFromSuperview() }
+        }
         
         
-        //TODO: left menu selection
+        //TODO: add MainAreaContentView subclasses with nibs
         
         
     }

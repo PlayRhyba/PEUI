@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainAreaViewController" customModule="PEUI" customModuleProvider="target">
             <connections>
+                <outlet property="contentContainer" destination="ieH-Cn-ldI" id="KDa-BZ-fPr"/>
                 <outlet property="leftMenu" destination="zWK-If-Pfg" id="SV4-ss-PdI"/>
                 <outlet property="topMenu" destination="faH-sw-EeP" id="ZGg-Po-FAo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,16 +22,6 @@
             <rect key="frame" x="0.0" y="64" width="768" height="960"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Area Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wl-U7-xnL">
-                    <rect key="frame" x="317" y="469.5" width="134.5" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="134.5" id="2K1-tl-Vxa"/>
-                        <constraint firstAttribute="height" constant="21" id="UAE-6u-z6C"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faH-sw-EeP" customClass="TopMainAreaMenu" customModule="PEUI" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
                     <subviews>
@@ -92,17 +83,23 @@
                         <outlet property="tableView" destination="Ta6-Oi-FT7" id="94D-5D-DyB"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieH-Cn-ldI">
+                    <rect key="frame" x="200" y="120" width="568" height="840"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zWK-If-Pfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="36v-DN-0xh"/>
-                <constraint firstItem="6wl-U7-xnL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AzQ-m6-pqb"/>
                 <constraint firstAttribute="trailing" secondItem="faH-sw-EeP" secondAttribute="trailing" id="C4x-nv-5Et"/>
                 <constraint firstItem="zWK-If-Pfg" firstAttribute="top" secondItem="faH-sw-EeP" secondAttribute="bottom" id="DAX-dx-3eH"/>
+                <constraint firstAttribute="trailing" secondItem="ieH-Cn-ldI" secondAttribute="trailing" id="IBd-8S-f9y"/>
                 <constraint firstItem="faH-sw-EeP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JzN-Af-fZ9"/>
+                <constraint firstItem="ieH-Cn-ldI" firstAttribute="leading" secondItem="zWK-If-Pfg" secondAttribute="trailing" id="cAe-gQ-R2M"/>
                 <constraint firstAttribute="bottom" secondItem="zWK-If-Pfg" secondAttribute="bottom" id="diI-hw-h8x"/>
                 <constraint firstItem="faH-sw-EeP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ee6-cI-pm4"/>
-                <constraint firstItem="6wl-U7-xnL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hFI-ER-J3E"/>
+                <constraint firstAttribute="bottom" secondItem="ieH-Cn-ldI" secondAttribute="bottom" id="ioy-OE-cHK"/>
+                <constraint firstItem="ieH-Cn-ldI" firstAttribute="top" secondItem="faH-sw-EeP" secondAttribute="bottom" id="qaq-aF-qmQ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="-276" y="-16"/>
