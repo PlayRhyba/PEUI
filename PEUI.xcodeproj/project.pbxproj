@@ -28,10 +28,14 @@
 		C7D2A3941EFD74C100414232 /* PENavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A3901EFD74C100414232 /* PENavigationController.swift */; };
 		C7D2A3951EFD74C100414232 /* PESplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A3911EFD74C100414232 /* PESplitViewController.swift */; };
 		C7D2A3961EFD74C100414232 /* PEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A3921EFD74C100414232 /* PEViewController.swift */; };
-		C7D2A3981EFD74FF00414232 /* NSObject+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A3971EFD74FF00414232 /* NSObject+Utilities.swift */; };
+		C7D2A3981EFD74FF00414232 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A3971EFD74FF00414232 /* NSObject+ClassName.swift */; };
 		C7D2A39B1EFD765000414232 /* TopMainAreaMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A39A1EFD765000414232 /* TopMainAreaMenu.swift */; };
 		C7D2A3A01EFD76B100414232 /* TopMainAreaMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2A39F1EFD76B100414232 /* TopMainAreaMenuCell.swift */; };
 		C7D2A3A21EFD76C800414232 /* TopMainAreaMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D2A3A11EFD76C800414232 /* TopMainAreaMenuCell.xib */; };
+		C7E097AC1F01172D00FD8F7A /* MainAreaCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E097AB1F01172D00FD8F7A /* MainAreaCurrentView.swift */; };
+		C7E097AE1F01175000FD8F7A /* MainAreaCurrentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E097AD1F01175000FD8F7A /* MainAreaCurrentView.xib */; };
+		C7E097B01F01178500FD8F7A /* MainAreaSynchronizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E097AF1F01178500FD8F7A /* MainAreaSynchronizationView.swift */; };
+		C7E097B21F01179600FD8F7A /* MainAreaSynchronizationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E097B11F01179600FD8F7A /* MainAreaSynchronizationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +62,14 @@
 		C7D2A3901EFD74C100414232 /* PENavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PENavigationController.swift; sourceTree = "<group>"; };
 		C7D2A3911EFD74C100414232 /* PESplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PESplitViewController.swift; sourceTree = "<group>"; };
 		C7D2A3921EFD74C100414232 /* PEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEViewController.swift; sourceTree = "<group>"; };
-		C7D2A3971EFD74FF00414232 /* NSObject+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utilities.swift"; sourceTree = "<group>"; };
+		C7D2A3971EFD74FF00414232 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		C7D2A39A1EFD765000414232 /* TopMainAreaMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMainAreaMenu.swift; sourceTree = "<group>"; };
 		C7D2A39F1EFD76B100414232 /* TopMainAreaMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMainAreaMenuCell.swift; sourceTree = "<group>"; };
 		C7D2A3A11EFD76C800414232 /* TopMainAreaMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopMainAreaMenuCell.xib; sourceTree = "<group>"; };
+		C7E097AB1F01172D00FD8F7A /* MainAreaCurrentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAreaCurrentView.swift; sourceTree = "<group>"; };
+		C7E097AD1F01175000FD8F7A /* MainAreaCurrentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainAreaCurrentView.xib; sourceTree = "<group>"; };
+		C7E097AF1F01178500FD8F7A /* MainAreaSynchronizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAreaSynchronizationView.swift; sourceTree = "<group>"; };
+		C7E097B11F01179600FD8F7A /* MainAreaSynchronizationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainAreaSynchronizationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				110B6CBD1F0057DA005B0911 /* MainAreaContentView.swift */,
+				C7E097A91F01169B00FD8F7A /* MainAreaCurrentView */,
+				C7E097AA1F01169B00FD8F7A /* MainAreaSynchronizationView */,
 			);
 			path = MainAreaContentView;
 			sourceTree = "<group>";
@@ -208,7 +218,7 @@
 		C7D2A38D1EFD74C100414232 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C7D2A3971EFD74FF00414232 /* NSObject+Utilities.swift */,
+				C7D2A3971EFD74FF00414232 /* NSObject+ClassName.swift */,
 				110B6CC31F0068BA005B0911 /* UIView+Nib.swift */,
 			);
 			path = Extensions;
@@ -242,6 +252,24 @@
 				C7D2A3A11EFD76C800414232 /* TopMainAreaMenuCell.xib */,
 			);
 			path = TopMainAreaMenuCell;
+			sourceTree = "<group>";
+		};
+		C7E097A91F01169B00FD8F7A /* MainAreaCurrentView */ = {
+			isa = PBXGroup;
+			children = (
+				C7E097AB1F01172D00FD8F7A /* MainAreaCurrentView.swift */,
+				C7E097AD1F01175000FD8F7A /* MainAreaCurrentView.xib */,
+			);
+			path = MainAreaCurrentView;
+			sourceTree = "<group>";
+		};
+		C7E097AA1F01169B00FD8F7A /* MainAreaSynchronizationView */ = {
+			isa = PBXGroup;
+			children = (
+				C7E097AF1F01178500FD8F7A /* MainAreaSynchronizationView.swift */,
+				C7E097B11F01179600FD8F7A /* MainAreaSynchronizationView.xib */,
+			);
+			path = MainAreaSynchronizationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +335,8 @@
 				C7D2A37E1EFD31F900414232 /* LoginViewController.xib in Resources */,
 				11C6F0251EFF0F110041A0DC /* LeftMainAreaMenuCell.xib in Resources */,
 				11524D301EFAF25C00EAE775 /* LaunchScreen.storyboard in Resources */,
+				C7E097AE1F01175000FD8F7A /* MainAreaCurrentView.xib in Resources */,
+				C7E097B21F01179600FD8F7A /* MainAreaSynchronizationView.xib in Resources */,
 				11524D2D1EFAF25C00EAE775 /* Assets.xcassets in Resources */,
 				11C6F01B1EFEFA160041A0DC /* NetworkOptionsViewController.xib in Resources */,
 				C7D2A3A21EFD76C800414232 /* TopMainAreaMenuCell.xib in Resources */,
@@ -324,6 +354,7 @@
 				C7D2A3841EFD37F600414232 /* Router.swift in Sources */,
 				110B6CC41F0068BA005B0911 /* UIView+Nib.swift in Sources */,
 				11C6F0211EFF03C20041A0DC /* PETableViewCell.swift in Sources */,
+				C7E097AC1F01172D00FD8F7A /* MainAreaCurrentView.swift in Sources */,
 				11C6F0231EFF04860041A0DC /* LeftMainAreaMenuCell.swift in Sources */,
 				C7D2A3811EFD345500414232 /* MainAreaViewController.swift in Sources */,
 				C7D2A39B1EFD765000414232 /* TopMainAreaMenu.swift in Sources */,
@@ -332,7 +363,8 @@
 				C7D2A3941EFD74C100414232 /* PENavigationController.swift in Sources */,
 				C7D2A38A1EFD6EC900414232 /* Configuration.swift in Sources */,
 				C7D2A3961EFD74C100414232 /* PEViewController.swift in Sources */,
-				C7D2A3981EFD74FF00414232 /* NSObject+Utilities.swift in Sources */,
+				C7E097B01F01178500FD8F7A /* MainAreaSynchronizationView.swift in Sources */,
+				C7D2A3981EFD74FF00414232 /* NSObject+ClassName.swift in Sources */,
 				11C6F01E1EFEFE1F0041A0DC /* LeftMainAreaMenu.swift in Sources */,
 				C7D2A3951EFD74C100414232 /* PESplitViewController.swift in Sources */,
 				C7D2A3931EFD74C100414232 /* PECollectionViewCell.swift in Sources */,

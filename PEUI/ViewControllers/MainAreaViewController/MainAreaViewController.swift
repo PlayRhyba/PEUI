@@ -31,7 +31,7 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
                                                            action: #selector(backToLogin))
         topMenu.delegate = self
         leftMenu.delegate = self
-
+        
         topMenu.selectItem(atIndex: 0)
     }
     
@@ -49,23 +49,18 @@ class MainAreaViewController: PEViewController, TopMainAreaMenuDelegate, LeftMai
     
     
     func leftMainAreaMenu(_ leftMainAreaMenu: LeftMainAreaMenu, didSelectItem item: LeftMainAreaMenuItem) {
-        let view = MainAreaContentView()
-        
         switch item {
         case .current:
-            view.backgroundColor = UIColor.red
-            view.fill(superview: contentContainer)
-        case .recent:
-            view.backgroundColor = UIColor.green
-            view.fill(superview: contentContainer)
+            let view = MainAreaCurrentView.loadFromNib() as! MainAreaCurrentView
+            view.pin(to: contentContainer)
+            
+        case .synchronization:
+            let view = MainAreaSynchronizationView.loadFromNib() as! MainAreaSynchronizationView
+            view.pin(to: contentContainer)
+            
         default:
             contentContainer.subviews.forEach { $0.removeFromSuperview() }
         }
-        
-        
-        //TODO: add MainAreaContentView subclasses with nibs
-        
-        
     }
     
     

@@ -16,7 +16,7 @@ class MainAreaContentView: UIView {
     //MARK: Public Mehtods
     
     
-    func fill(superview: UIView) {
+    func pin(to superview: UIView) {
         superview.subviews.forEach { $0.removeFromSuperview() }
         superview.addSubview(self)
         

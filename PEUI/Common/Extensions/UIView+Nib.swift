@@ -12,13 +12,18 @@ import UIKit
 
 extension UIView {
     
-    class func fromNib<T : UIView>() -> T {
-        return Bundle.main.loadNibNamed(T.className, owner: nil, options: nil)![0] as! T
+    class func loadFromNib(nibName: String? = nil, owner: Any? = nil) -> Any? {
+        guard let objects = Bundle.main.loadNibNamed(nibName ?? self.className,
+                                                     owner: owner,
+                                                     options: nil)
+            else { return nil }
         
+        for obj in objects {
+            if (obj as! UIView).isMember(of: self) {
+                return obj
+            }
+        }
         
-//        let myCustomView: CustomView = UIView.fromNib()
-//        ..or even:
-//        
-//        let myCustomView: CustomView = .fromNib()
+        return nil
     }
 }
